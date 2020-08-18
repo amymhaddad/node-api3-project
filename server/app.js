@@ -9,17 +9,11 @@ app.use(bodyParser.json());
 const usersRouter = require('./users/userRouter');
 const postsRouter = require('./posts/postRouter');
 
-let logger = function(req, res, next) {
-	let date = `Date: ${Date.now()}`;
-	let method = `Method: ${req.method}\n`;
-	let url = `url: ${req.url}\n`;
-	let path = `path: ${req.path}\n`;
-	console.log(date, method, url, path);
-	next();
-};
+const { logger } = require('./middlewares/Middleware');
+const cors = require('cors');
 
 app.use(logger);
-
+app.use(cors());
 app.use('/api/users', usersRouter);
 app.use('/api/posts', postsRouter);
 
