@@ -1,5 +1,5 @@
 const db = require('../data/dbConfig.js');
-
+console.log("Db", db)
 module.exports = {
   get,
   getById,

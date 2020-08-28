@@ -12,6 +12,7 @@ router.get('/', (req, res) => {
 			return res.status(200).json(users);
 		})
 		.catch((error) => {
+			console.log("eer", error)
 			return res.status(500).json({ error: 'Server error.' });
 		});
 });
