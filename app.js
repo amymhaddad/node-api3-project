@@ -6,10 +6,11 @@ const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-const usersRouter = require('./users/userRouter');
-const postsRouter = require('./posts/postRouter');
 
-const { logger } = require('./middlewares/Middleware');
+const usersRouter = require('./server/users/userRouter');
+const postsRouter = require('./server/posts/postRouter');
+
+const { logger } = require('./server/middlewares/Middleware');
 const cors = require('cors');
 
 app.use(logger);
